@@ -34,6 +34,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await loadComponent("header", "components/header.html");
 
+    const menuToggle = document.getElementById("menu-toggle");
+
+    const mainNav = document.getElementById("main-nav");
+
+    if (menuToggle && mainNav) {
+
+        menuToggle.addEventListener("click", () => {
+
+            mainNav.classList.toggle("active");
+
+        });
+
+    }
+
     const currentPage = location.pathname.split("/").pop() || "index.html";
 
 document.querySelectorAll("header nav a").forEach(link => {

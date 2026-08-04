@@ -1084,7 +1084,7 @@ nav ul li a.active::after{
 
 .artwork-image{
 
-    max-width:1200px;
+    max-width:1500px;
 
     margin:0 auto;
 
@@ -2124,5 +2124,136 @@ nav ul li a.active::after{
 
 }
 
+/* =====================================
+   LIKE BUTTON
+===================================== */
+
+.like-button{
+
+    background: transparent;
+
+    border: none;
+
+    color: #f5f5f5;
+
+    font: inherit;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    transition: .3s;
+
+}
+
+.like-button:hover{
+
+    color: #ff5c5c;
+
+}
+
+/* ===================================================
+   MOBILE ARTWORK
+=================================================== */
+
+@media (max-width:768px){
+
+    #artwork-hero .container,
+    #artwork-info .container,
+    #artist-story .container,
+    #artwork-navigation .container,
+    #related-works .container{
+
+        width:100%;
+        max-width:560px;
+
+        margin:0 auto;
+
+        padding-left:24px;
+        padding-right:24px;
+
+    }
+
+    #artwork-info h1{
+
+        text-align:center;
+
+    }
+
+}
 
 
+/* ===================================================
+   HAMBURGER MENU
+=================================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:var(--gold);
+
+    font-size:32px;
+
+    cursor:pointer;
+
+    z-index:1002;
+
+}
+
+@media (max-width:768px){
+
+    header .container{
+
+        position:relative;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    #main-nav{
+
+        display:none;
+
+        position:absolute;
+
+        top:80px;
+        left:0;
+
+        width:100%;
+
+        background:#111111;
+
+        border-top:1px solid rgba(255,255,255,.08);
+
+        padding:20px 0;
+
+    }
+
+    #main-nav.active{
+
+        display:block;
+
+    }
+
+    #main-nav ul{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:20px;
+
+    }
+
+}

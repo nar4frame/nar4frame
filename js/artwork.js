@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const params = new URLSearchParams(window.location.search);
     const artworkId = params.get("id");
+
     const currentArtwork = artworks.find(item => item.id === artworkId);
 
     
@@ -80,13 +81,157 @@ document.getElementById("artwork-published").textContent =
 document.getElementById("artwork-story").textContent =
     currentArtwork.story || "";
 
-    // ==================================================
-    // RELATED WORKS
-    // ==================================================
 
-    const relatedGallery = document.getElementById("related-gallery");
+    // =====================================
+// UNIQUE VIEW COUNTER
+// =====================================
 
-    if (!relatedGallery) return;
+const storageKey = `nar4_view_${artworkId}`;
+
+console.log("Storage Key:", storageKey);
+console.log("Stored:", localStorage.getItem(storageKey));
+
+const updateViewDisplay = () => {
+
+    fetch(`https://nar4frame-analytics.nar4frame.workers.dev/view/${artworkId}`)
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            const viewElement = document.getElementById("artwork-views");
+
+            if (!viewElement) return;
+
+            const label = data.views === 1 ? "View" : "Views";
+
+            viewElement.textContent = `${data.views} ${label}`;
+
+        })
+
+        .catch(error => {
+
+            console.error("View Counter Error:", error);
+
+        });
+
+};
+
+if (!localStorage.getItem(storageKey)) {
+
+    fetch(`https://nar4frame-analytics.nar4frame.workers.dev/view/${artworkId}`, {
+
+        method: "POST"
+
+    })
+
+    .then(() => {
+
+        localStorage.setItem(storageKey, "true");
+
+        updateViewDisplay();
+
+    })
+
+    .catch(error => {
+
+        console.error("View Counter Error:", error);
+
+    });
+
+} else {
+
+    updateViewDisplay();
+
+}
+
+
+// =====================================
+// LIKE COUNTER
+// =====================================
+
+const likeStorageKey = `nar4_like_${artworkId}`;
+
+const updateLikeDisplay = () => {
+
+    fetch(`https://nar4frame-analytics.nar4frame.workers.dev/like/${artworkId}`)
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            const likeElement = document.getElementById("artwork-likes");
+
+            if (!likeElement) return;
+
+            const label = data.likes === 1 ? "Like" : "Likes";
+
+            likeElement.textContent = `${data.likes} ${label}`;
+
+        })
+
+        .catch(error => {
+
+            console.error("Like Counter Error:", error);
+
+        });
+
+};
+
+const likeButton = document.getElementById("like-button");
+
+if (likeButton) {
+
+    updateLikeDisplay();
+
+    likeButton.addEventListener("click", () => {
+
+        if (localStorage.getItem(likeStorageKey)) return;
+
+        fetch(`https://nar4frame-analytics.nar4frame.workers.dev/like/${artworkId}`, {
+
+            method: "POST"
+
+        })
+
+        .then(response => {
+
+            if (!response.ok) {
+
+                throw new Error("Failed to save Like");
+
+            }
+
+            return response.json();
+
+        })
+
+        .then(() => {
+
+            localStorage.setItem(likeStorageKey, "true");
+
+            updateLikeDisplay();
+
+        })
+
+        .catch(error => {
+
+            console.error("Like Counter Error:", error);
+
+        });
+
+    });
+
+}
+
+
+// ==================================================
+// RELATED WORKS
+// ==================================================
+
+const relatedGallery = document.getElementById("related-gallery");
+
+if (relatedGallery) {
 
     relatedGallery.innerHTML = "";
 
@@ -108,6 +253,9 @@ document.getElementById("artwork-story").textContent =
         `;
 
     });
+
+}
+
 
     // ==================================================
 // PREVIOUS & NEXT
