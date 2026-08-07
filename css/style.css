@@ -29,9 +29,21 @@ main{
 }
 
 img{
+
     display:block;
     width:100%;
     height:auto;
+
+    -webkit-user-drag:none;
+    -webkit-touch-callout:none;
+
+    user-select:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+
+    -webkit-tap-highlight-color:transparent;
+
 }
 
 a{
@@ -1881,6 +1893,8 @@ nav ul li a.active::after{
 
 .gallery-item{
 
+    position:relative;
+
     display:block;
 
     overflow:hidden;
@@ -2257,3 +2271,21 @@ nav ul li a.active::after{
     }
 
 }
+
+/* ===================================================
+   IMAGE PROTECTION OVERLAY
+=================================================== */
+
+.image-protection{
+
+    position:absolute;
+
+    inset:0;
+
+    background:transparent;
+
+    z-index:5;
+
+}
+
+
