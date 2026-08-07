@@ -116,3 +116,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+
+// ==================================================
+// IMAGE PROTECTION v2.1
+// Disable Drag + Right Click Image
+// ==================================================
+
+function protectImages() {
+
+    document.querySelectorAll("img").forEach(img => {
+
+        // Lewati logo
+        if (img.closest(".logo")) return;
+
+        // Disable drag
+        img.setAttribute("draggable", "false");
+        img.ondragstart = () => false;
+
+        // Disable klik kanan
+        img.oncontextmenu = (event) => {
+            event.preventDefault();
+            return false;
+        };
+
+    });
+
+}
+
+// Saat DOM selesai
+document.addEventListener("DOMContentLoaded", protectImages);
+
+// Setelah semua elemen dinamis selesai dibuat
+window.addEventListener("load", protectImages);
+
+
