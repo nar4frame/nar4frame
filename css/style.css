@@ -546,7 +546,7 @@ header .container{
 
         transparent,
 
-        rgba(0,0,0,.75)
+        rgba(0,0,0,.10)
 
     );
 
@@ -1318,6 +1318,13 @@ nav ul li a.active::after{
 
     margin-top:50px;
 
+}
+
+#about-equipment .equipment-item:last-child{
+    grid-column:1 / -1;
+    justify-self:center;
+    transform:translateX(70px);
+    
 }
 
 #about-equipment h3{
