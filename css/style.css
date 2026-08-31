@@ -2201,6 +2201,21 @@ nav ul li a.active::after{
 
     }
 
+    #about-equipment .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #about-equipment {
+        padding-top: 150px;
+    }
+
+    #about-equipment .equipment-item:last-child {
+        grid-column: auto;
+        justify-self: start;
+        transform: none;
+    }
+
+
 }
 
 
