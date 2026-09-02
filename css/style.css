@@ -1729,6 +1729,17 @@ nav ul li a.active::after{
 
     }
 
+        .contact-grid{
+        grid-template-columns:1fr;
+        gap:70px;
+    }
+
+        #about-specializations ul{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+
+
 }
 
 @media(max-width:576px){
@@ -2309,5 +2320,18 @@ nav ul li a.active::after{
     z-index:5;
 
 }
+
+/* ==================================================
+   MOBILE FOOTER NAVIGATION
+================================================== */
+
+@media (max-width:768px){
+
+    .footer-nav{
+        display:none;
+    }
+
+}
+
 
 
