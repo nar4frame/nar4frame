@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 button.classList.add("active");
 
-                currentCategory = button.textContent.trim().toLowerCase();
+                currentCategory = button.textContent.trim().toLowerCase().replace("nar4frame ", "");
 
                 visibleItems = itemsPerPage;
 

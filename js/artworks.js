@@ -270,137 +270,189 @@ const artworks = [
     },
 
     // ==========================================
-    // SCENIC
+    // nar4frame Signature
     // ==========================================
 
     {
-        id: "scenic-001",
-        slug: "The Quiet Shrine",
-        title: "The Quiet Shrine",
-        category: "scenic",
-        collection: "Scenic",
+        id: "nar4frame signature-001",
+        slug: "The road into silence",
+        title: "The road into silence",
+        category: "nar4frame signature",
+        collection: "nar4frame Signature",
         featured: true,
-        image: "images/gallery/scenic/scenic-001.webp",
-        location: "Arakurayama Sengen Park, Kawaguchiko Japan",
+        image: "images/gallery/nar4frame signature/nar4frame signature-001.webp",
+        location: "Kawaguchiko Lake, Japan",
         published: "Spring 2026",
-        story: "Sometimes the most memorable part of a place isn't what you see first, but the quiet feeling you take with you when you leave."
+        story: "A quiet road winding through the trees, leading toward the mountains where the noise of everyday life slowly fades into stillness."
     },
 
     {
-        id: "scenic-002",
-        slug: "The Long Road",
-        title: "The Long Road",
-        category: "scenic",
-        collection: "Scenic",
+        id: "nar4frame signature-002",
+        slug: "A Quiet Crossing",
+        title: "A Quiet Crossing",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
         featured: false,
-        image: "images/gallery/scenic/scenic-002.webp",
+        image: "images/gallery/nar4frame signature/nar4frame signature-002.webp",
         location: "Kawaguchiko Lake, Japan",
         published: "Winter 2026",
-        story: "Between the sound of passing cars and the silence of the mountains, I found a moment that didn't ask to be remembered, yet never faded."
+        story: "A solitary figure crosses the still water, moving quietly between the forest and the distant village."
     },
 
     {
-        id: "scenic-003",
-        slug: "Crossroad of Kawaguchiko",
-        title: "Crossroad of Kawaguchiko",
-        category: "scenic",
-        collection: "Scenic",
+        id: "nar4frame signature-003",
+        slug: "Living with the Lake",
+        title: "Living with the Lake",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
         featured: false,
-        image: "images/gallery/scenic/scenic-003.webp",
-        location: "Kawaguchiko Station, Japan",
+        image: "images/gallery/nar4frame signature/nar4frame signature-003.webp",
+        location: "Kawaguchiko Lake, Japan",
         published: "Winter 2026",
-        story: "There was nothing extraordinary about this view, yet it carried the quiet charm of everyday life. Sometimes, that's exactly what makes a place unforgettable."
+        story: "A village shaped by the water where the lake is not just a landscape, but part of everyday life."
     },
 
     {
-        id: "scenic-004",
-        slug: "Gateway to Gion",
-        title: "Gateway to Gion",
-        category: "scenic",
-        collection: "Scenic",
+        id: "nar4frame signature-004",
+        slug: "Between Stillness and Motion",
+        title: "Between Stillness and Motion",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
         featured: false,
-        image: "images/gallery/scenic/scenic-004.webp",
-        location: "Kyoto, Japan",
+        image: "images/gallery/nar4frame signature/nar4frame signature-004.webp",
+        location: "Kawaguchiko Lake, Japan",
         published: "Winter 2026",
-        story: "Sometimes the most memorable places aren't the famous landmarks, but the ordinary streets where everyday life quietly unfolds."
+        story: "Between the quiet shore and the moving water, life finds its own rhythm."
     },
 
     {
-        id: "scenic-005",
-        slug: "When the City Falls Quiet",
-        title: "When the City Falls Quiet",
-        category: "scenic",
-        collection: "Scenic",
+        id: "nar4frame signature-005",
+        slug: "A Quiet Morning by the River",
+        title: "A Quiet Morning by the River",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
         featured: false,
-        image: "images/gallery/scenic/scenic-005.webp",
-        location: "Jakarta, Indonesia",
-        published: "Summer 2026",
-        story: "Distance softens the details, but not the feeling. Some views are remembered for their atmosphere more than their clarity and not every horizon needs to be perfectly clear. Sometimes, a little distance and a little haze leave more room for imagination."
-    },
-
-    {
-        id: "scenic-006",
-        slug: "Between Storm and Light",
-        title: "Between Storm and Light",
-        category: "scenic",
-        collection: "Scenic",
-        featured: false,
-        image: "images/gallery/scenic/scenic-006.webp",
-        location: "Arakurayama Sengen Park, Kawaguchiko Japan",
+        image: "images/gallery/nar4frame signature/nar4frame signature-005.webp",
+        location: "Shijo Ohashi Bridge Gion, Kyoto",
         published: "Winter 2026",
-        story: "There are moments when the world stands between shadow and light. The sky opens just enough to whisper one quiet message: keep looking."
+        story: "The river moves slowly through the heart of the city, reflecting the stillness of an overcast day. Old houses, distant mountains, and soft blossoms along the banks come together in a quiet scene where the city feels peaceful and unhurried."
     },
 
     {
-        id: "scenic-007",
-        slug: "Stillness by the Water",
-        title: "Stillness by the Water",
-        category: "scenic",
-        collection: "Scenic",
+        id: "nar4frame signature-006",
+        slug: "Where the river meet s the city",
+        title: "Where the river meet s the city",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
         featured: false,
-        image: "images/gallery/scenic/scenic-007.webp",
-        location: "Lake Kawaguchiko, Japan",
+        image: "images/gallery/nar4frame signature/nar4frame signature-006.webp",
+        location: "Shijo Ohashi Bridge Gion, Kyoto",
         published: "Winter 2026",
-        story: "A solitary fisherman waits quietly beneath the muted autumn trees, surrounded by the calm rhythm of the lake."
+        story: "Beyond the riverbank, the city continues its quiet rhythm, softened by trees, blossoms, and the passing season."
     },
 
     {
-        id: "scenic-008",
+        id: "nar4frame signature-007",
+        slug: "Between water and home",
+        title: "Between water and home",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
+        featured: false,
+        image: "images/gallery/nar4frame signature/nar4frame signature-007.webp",
+        location: "Shijo Ohashi Bridge Gion, Kyoto",
+        published: "Winter 2026",
+        story: "The river quietly passes between the old homes, carrying the rhythm of everyday life along its banks."
+    },
+
+    {
+        id: "nar4frame signature-008",
+        slug: "Between Town and Sky",
+        title: "Between Town and Sky",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
+        featured: false,
+        image: "images/gallery/nar4frame signature/nar4frame signature-008.webp",
+        location: "Mt. Fuji, Japan",
+        published: "Winter 2026",
+        story: "An ordinary town, an extraordinary horizon, and a moment suspended in silence."
+    },
+
+    {
+        id: "nar4frame signature-009",
         slug: "Where the Streets Fall Quiet",
         title: "Where the Streets Fall Quiet",
-        category: "scenic",
-        collection: "Scenic",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
         featured: false,
-        image: "images/gallery/scenic/scenic-008.webp",
-        location: "Kawaguchiko Station Japan",
+        image: "images/gallery/nar4frame signature/nar4frame signature-009.webp",
+        location: "Kawaguchico Station, Japan",
         published: "Winter 2026",
         story: "An ordinary mountain town, briefly transformed by silence and fading winter light."
     },
 
     {
-        id: "scenic-009",
-        slug: "A Quiet Morning by the River",
-        title: "A Quiet Morning by the River",
-        category: "scenic",
-        collection: "Scenic",
+        id: "nar4frame signature-010",
+        slug: "The Stillness of Time",
+        title: "The Stillness of Time",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
         featured: false,
-        image: "images/gallery/scenic/scenic-009.webp",
-        location: "Shijo Ohashi Bridge Gion, Kyoto",
+        image: "images/gallery/nar4frame signature/nar4frame signature-010.webp",
+        location: "Akurayama Kyoto, Japan",
         published: "Winter 2026",
-        story: "The river moves slowly through the heart of the city, reflecting the stillness of an overcast day. Old houses, distant mountains, and soft blossoms along the banks come together in a quiet scene where the city feels peaceful and unhurried.."
+        story: "A quiet encounter between architecture, nature, and time, where tradition stands peacefully beneath the changing seasons."
     },
 
     {
-        id: "scenic-010",
-        slug: "Quiet Along the River",
-        title: "Quiet Along the River",
-        category: "scenic",
-        collection: "Scenic",
+        id: "nar4frame signature-011",
+        slug: "Through the Bare Branches",
+        title: "Through the Bare Branches",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
         featured: false,
-        image: "images/gallery/scenic/scenic-010.webp",
-        location: "Shijo Ohashi Bridge Gion, Kyoto",
+        image: "images/gallery/nar4frame signature/nar4frame signature-011.webp",
+        location: "Akurayama Kyoto, Japan",
         published: "Winter 2026",
-        story: "A quiet river winds through the heart of the old city, reflecting the muted colors of winter. Traditional wooden houses, bare trees, and soft afternoon light create a peaceful atmosphere where the old and the everyday meet."
+        story: "A quiet staircase disappears beneath the bare branches, leading deeper into the hills. The muted winter tones and soft blue sky create a calm, contemplative mood, with the distant blossoms offering a gentle reminder that the season is slowly changing."
+    },
+
+    {
+        id: "nar4frame signature-012",
+        slug: "Between Water and Silence",
+        title: "Between Water and Silence",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
+        featured: false,
+        image: "images/gallery/nar4frame signature/nar4frame signature-012.webp",
+        location: "Lake Kawaguchiko, Japan",
+        published: "Winter 2026",
+        story: "Alone on the water, where every ripple carries a quiet story."
+    },
+
+    {
+        id: "nar4frame signature-013",
+        slug: "One with the Water",
+        title: "One with the Water",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
+        featured: false,
+        image: "images/gallery/nar4frame signature/nar4frame signature-013.webp",
+        location: "Lake Kawaguchiko, Japan",
+        published: "Winter 2026",
+        story: "For a moment, the water holds everything still."
+    },
+
+    {
+        id: "nar4frame signature-014",
+        slug: "A Quiet Distance",
+        title: "A Quiet Distance",
+        category: "nar4frame signature",
+        collection: "nar4frame signature",
+        featured: false,
+        image: "images/gallery/nar4frame signature/nar4frame signature-014.webp",
+        location: "Lake Kawaguchiko, Japan",
+        published: "Winter 2026",
+        story: "Some places speak softly, through distance, light, and silence."
     },
 
 
