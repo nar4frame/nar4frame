@@ -235,27 +235,9 @@
     </p>
   </section>
 
-  <section class="gallery">
-
-    <article class="photo-card"
-      onclick="openPhoto('Landscape Study 01', 'images/landscape.webp', '')">
-      <img src="images/landscape.webp" alt="Landscape photography">
-      <h2 class="photo-title">Landscape Study 01</h2>
-    </article>
-
-    <article class="photo-card"
-      onclick="openPhoto('Landscape Study 02', 'images/hero.webp', '')">
-      <img src="images/hero.webp" alt="Landscape photography">
-      <h2 class="photo-title">Landscape Study 02</h2>
-    </article>
-
-    <article class="photo-card"
-      onclick="openPhoto('Landscape Study 03', 'images/featured.webp', '')">
-      <img src="images/featured.webp" alt="Landscape photography">
-      <h2 class="photo-title">Landscape Study 03</h2>
-    </article>
-
-  </section>
+  <section class="gallery" id="photoGallery">
+  <!-- Photos will be loaded from data/photos.json -->
+</section>
 
   <footer>
     <p>© 2026 Ivan Setiawan · nar4frame</p>
@@ -278,22 +260,69 @@
 
   <script>
     function openPhoto(title, image, location) {
-      document.getElementById("modalImage").src = image;
-      document.getElementById("modalTitle").textContent = title;
-      document.getElementById("modalLocation").textContent = location;
+  document.getElementById("modalImage").src = image;
+  document.getElementById("modalTitle").textContent = title;
 
-      document.getElementById("photoModal").classList.add("active");
+  const locationElement = document.getElementById("modalLocation");
+  locationElement.textContent = location || "";
+  locationElement.style.display = location ? "block" : "none";
+
+  document.getElementById("photoModal").classList.add("active");
+}
+
+function closePhoto() {
+  document.getElementById("photoModal").classList.remove("active");
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closePhoto();
+  }
+});
+
+// LOAD PHOTO DATA
+document.addEventListener("DOMContentLoaded", async function() {
+  const gallery = document.getElementById("photoGallery");
+
+  try {
+    const response = await fetch("data/photos.json");
+
+    if (!response.ok) {
+      throw new Error("Failed to load photo data");
     }
 
-    function closePhoto() {
-      document.getElementById("photoModal").classList.remove("active");
-    }
+    const data = await response.json();
+    const photos = data.landscape || [];
 
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape") {
-        closePhoto();
-      }
+    photos.forEach(photo => {
+      const card = document.createElement("article");
+      card.className = "photo-card";
+
+      const image = document.createElement("img");
+      image.src = photo.image;
+      image.alt = photo.title;
+      image.loading = "lazy";
+      image.draggable = false;
+
+      const title = document.createElement("h2");
+      title.className = "photo-title";
+      title.textContent = photo.title;
+
+      card.appendChild(image);
+      card.appendChild(title);
+
+      card.addEventListener("click", function() {
+        openPhoto(photo.title, photo.image, photo.location);
+      });
+
+      gallery.appendChild(card);
     });
+
+  } catch (error) {
+    console.error("Gallery error:", error);
+    gallery.textContent = "Unable to load photographs.";
+  }
+});
   </script>
 
 </body>
