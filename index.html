@@ -2,291 +2,368 @@
 <html lang="en">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>nar4frame | Fine Art Photography</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fine Art Landscape, Nature and Travel Photography by Ivan Setiawan.">
 
-    <title>nar4frame | Fine Art Photography</title>
+<meta name="author" content="Ivan Setiawan">
+<meta name="theme-color" content="#f7f6f2">
 
-    <meta name="description"
-      content="Discover fine art landscape, nature, and scenic photography by nar4frame. Timeless visual stories inspired by light, atmosphere, and quiet moments.">
+<link rel="canonical" href="https://nar4frame.com/">
 
-    <meta name="author"
-      content="Ivan Setiawan">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <meta name="robots"
-      content="index, follow">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <meta name="theme-color"
-      content="#111111">
-      
-    <link rel="canonical"
-      href="https://nar4frame.com/">
+<style>
 
+:root {
+    --background: #f7f6f2;
+    --text: #222222;
+    --muted: #777777;
+    --line: #deddd7;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" sizes="any">
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
 
-    <link rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="favicon-32x32.png">
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    <link rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="favicon-16x16.png">
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
 
-    <link rel="apple-touch-icon"
-      sizes="180x180"
-      href="apple-touch-icon.png">
+/* HEADER */
 
-    <link rel="manifest"
-      href="site.webmanifest">
+header {
+    padding: 25px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+}
 
+.logo {
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
 
-    <meta property="og:type"
-      content="website">
+nav {
+    display: flex;
+    gap: 32px;
+}
 
-    <meta property="og:title"
-      content="nar4frame | Fine Art Photography">
+nav a {
+    font-size: 13px;
+    color: var(--text);
+}
 
-    <meta property="og:description"
-      content="Discover fine art landscape, nature, and scenic photography by nar4frame.">
+nav a:hover {
+    opacity: .55;
+}
 
-    <meta property="og:url"
-      content="https://nar4frame.com/">
+/* HERO */
 
-    <meta property="og:site_name"
-      content="nar4frame">
+.hero {
+    margin: 35px 5% 80px;
+    position: relative;
+    height: 620px;
+    overflow: hidden;
+}
 
-    <meta property="og:image"
-      content="https://nar4frame.com/images/og-image.jpg">
+.hero img {
+    height: 100%;
+    object-fit: cover;
+}
 
-    <meta property="og:image:width"
-        content="1200">
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.02)
+    );
+}
 
-    <meta property="og:image:height"
-        content="630">
+.hero-content {
+    position: absolute;
+    left: 7%;
+    bottom: 13%;
+    color: white;
+}
 
-    <meta property="og:image:type"
-        content="image/jpeg">
+.hero-content span {
+    font-size: 11px;
+    letter-spacing: 4px;
+}
 
-    <meta name="twitter:card"
-      content="summary_large_image">
+.hero-content h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: 400;
+    margin: 20px 0;
+}
 
-    <meta name="twitter:title"
-      content="nar4frame | Fine Art Photography">
+.hero-content p {
+    font-size: 14px;
+    line-height: 1.8;
+}
 
-    <meta name="twitter:description"
-      content="Discover fine art landscape, nature, and scenic photography by nar4frame.">
+/* SECTION */
 
-    <meta name="twitter:image"
-      content="https://nar4frame.com/images/og-image.jpg">
+section {
+    padding: 0 6%;
+    margin-bottom: 110px;
+}
 
-    <meta name="twitter:image:alt"
-      content="Fine Art Photography by nar4frame"> 
+.section-heading {
+    margin-bottom: 35px;
+}
 
-    <meta property="og:locale"
-      content="en_US">
+.section-heading span {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+.section-heading h2 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 12px;
+}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+/* FEATURED */
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+.featured {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
-      rel="stylesheet">
+.featured img {
+    aspect-ratio: 3 / 2;
+}
 
-    <link rel="stylesheet" href="css/style.css">
+.featured-info h3 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
 
+.featured-info p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
 
+/* COLLECTIONS */
+
+.collections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.collection img {
+    aspect-ratio: 3 / 2;
+    transition: .4s ease;
+}
+
+.collection {
+    overflow: hidden;
+}
+
+.collection:hover img {
+    transform: scale(1.03);
+}
+
+.collection h3 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 18px;
+}
+
+.collection p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 7px;
+}
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about img {
+    aspect-ratio: 3 / 2;
+}
+
+.about h2 {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 20px 0;
+}
+
+.about p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--muted);
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--line);
+    padding: 45px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 20px 5%;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        height: 450px;
+        margin: 20px 3% 65px;
+    }
+
+    .featured,
+    .about {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .collections {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    section {
+        margin-bottom: 75px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <div id="header"></div>
+<!-- HEADER -->
 
-    <main>
+<header>
 
-        <section id="hero">
+    <a href="index.html" class="logo">nar4frame</a>
 
-            <div class="hero-image">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="landscape.html">Landscape</a>
+        <a href="nature.html">Nature</a>
+        <a href="travel.html">Travel</a>
+        <a href="#about">About</a>
+    </nav>
 
-                <img src="images/hero.webp"
-                     alt="Hero Image">
-
-            </div>
-
-            <div class="hero-overlay"></div>
-
-            <div class="hero-content container">
-
-                <span class="hero-label">
-
-                    Fine Art Photography
-
-                </span>
-
-                <h1>
-
-                    Beyond Every Frame
-
-                </h1>
-
-                <p>
-
-                    Timeless photographs inspired by
-                    nature, atmosphere, and quiet moments.
-
-                </p>
-
-                <a href="gallery.html"
-                   class="btn">
-
-                    Explore Gallery
-
-                </a>
-
-            </div>
-
-        </section>
+</header>
 
 
-<!-- ===================================================
-     FEATURED ARTWORK
-=================================================== -->
+<!-- HERO -->
 
-<section id="featured">
+<div class="hero">
 
-    <div class="container">
+    <img src="images/hero.jpg"
+         alt="Fine Art Landscape Photography">
 
-        <div class="section-heading">
+    <div class="hero-overlay"></div>
 
-            <span>Featured Artwork</span>
+    <div class="hero-content">
 
-            <h2>Selected Work</h2>
+        <span>FINE ART PHOTOGRAPHY</span>
 
-        </div>
+        <h1>Photography Without Limits</h1>
 
-        <article class="featured-card">
-
-            <div class="featured-image">
-
-                <img src="images/featured.webp"
-                     alt="Whispers of Sakura">
-
-            </div>
-
-            <div class="featured-info">
-
-                <div class="featured-meta">
-
-                    <span class="category">
-
-                        Nature
-
-                    </span>
-
-                    <span class="dot">•</span>
-
-                    <span class="location">
-
-                        Japan · 2026
-
-                    </span>
-
-                </div>
-
-                <h3>
-
-                    Whispers of Sakura
-
-                </h3>
-
-                <p>
-
-                    A quiet interpretation of spring,
-                    through light, atmosphere,
-                    and color.
-
-                </p>
-
-                <a href="artwork.html?id=nature-001" class="btn-link">
-                    Behind the Frame →
-                </a>
-
-            </div>
-
-        </article>
+        <p>Beyond Every Frame</p>
 
     </div>
 
-</section>
+</div>
 
-<!-- ===================================================
-     COLLECTIONS
-=================================================== -->
 
-<section id="collections">
+<!-- FEATURED -->
 
-    <div class="container">
+<section>
 
-        <div class="section-heading">
+    <div class="section-heading">
+        <span>Selected Work</span>
+        <h2>Featured Photography</h2>
+    </div>
 
-            <span>Collections</span>
+    <div class="featured">
 
-            <h2>Explore Collection</h2>
+        <img src="images/featured.jpg"
+             alt="Featured Photography">
 
-        </div>
+        <div class="featured-info">
 
-        <div class="collection-grid">
+            <h3>Beyond Every Frame</h3>
 
-            <a href="gallery.html?category=landscape"
-               class="collection-card">
-
-                <img src="images/landscape.webp"
-                     alt="Landscape">
-
-                <div class="collection-overlay">
-
-                    <h3>Landscape</h3>
-
-                </div>
-
-            </a>
-
-            <a href="gallery.html?category=nature"
-               class="collection-card">
-
-                <img src="images/nature.webp"
-                     alt="Nature">
-
-                <div class="collection-overlay">
-
-                    <h3>Nature</h3>
-
-                </div>
-
-            </a>
-
-            <a href="gallery.html?category=signature"
-               class="collection-card">
-
-                <img src="images/signature.webp"
-                     alt="Signature">
-
-                <div class="collection-overlay">
-
-                    <h3>Signature</h3>
-
-                </div>
-
-            </a>
+            <p>
+                A visual journey through landscapes,
+                nature and places around the world.
+                Capturing moments through light,
+                atmosphere and perspective.
+            </p>
 
         </div>
 
@@ -294,70 +371,78 @@
 
 </section>
 
-<!-- ===================================================
-     ARTIST STATEMENT
-=================================================== -->
 
-<section id="artist">
+<!-- COLLECTIONS -->
 
-    <div class="container">
+<section>
 
-        <div class="artist-wrapper">
+    <div class="section-heading">
+        <span>Explore</span>
+        <h2>Collections</h2>
+    </div>
 
-            <div class="artist-photo">
+    <div class="collections">
 
-                <img src="images/ivan-setiawan.webp"
-                     alt="Ivan Setiawan">
+        <a href="landscape.html" class="collection">
 
-            </div>
+            <img src="images/landscape.jpg"
+                 alt="Landscape Photography"
+                 loading="lazy">
 
-            <div class="artist-content">
+            <h3>Landscape</h3>
+            <p>Mountains, forests and open landscapes.</p>
 
-                <span class="section-label">
+        </a>
 
-                    Artist
+        <a href="nature.html" class="collection">
 
-                </span>
+            <img src="images/nature.jpg"
+                 alt="Nature Photography"
+                 loading="lazy">
 
-                <h2>
+            <h3>Nature</h3>
+            <p>Wildlife, flowers and macro photography.</p>
 
-                    Ivan
+        </a>
 
-                </h2>
+        <a href="travel.html" class="collection">
 
-                <h3>
+            <img src="images/scenic.jpg"
+                 alt="Travel Photography"
+                 loading="lazy">
 
-                    Fine Art Photographer
+            <h3>Travel</h3>
+            <p>Places, architecture and travel stories.</p>
 
-                </h3>
+        </a>
 
-                <p>
+    </div>
 
-                    Photography, is not merely about recording what is seen,
-                    but about expressing emotion, atmosphere, and the quiet beauty
-                    hidden within ordinary moments. Every photograph is carefully
-                    crafted through light, color, composition, and patience to create
-                    timeless fine art imagery.
+</section>
 
-                </p>
 
-                <p>
+<!-- ABOUT -->
 
-                    Through nar4frame, I present collections inspired by nature,
-                    travel, and everyday scenes, transformed into visual stories
-                    that invite viewers to slow down and appreciate the details
-                    often overlooked.
+<section id="about">
 
-                </p>
+    <div class="about">
 
-                <a
-                    href="about.html"
-                    class="btn"
-                    aria-label="Read more about the artist Ivan Setiawan">
-                    Learn About the Artist
-                </a>
+        <img src="images/ivan-setiawan.jpg"
+             alt="Ivan Setiawan"
+             loading="lazy">
 
-            </div>
+        <div>
+
+            <span>ABOUT THE PHOTOGRAPHER</span>
+
+            <h2>Ivan Setiawan</h2>
+
+            <p>
+                nar4frame is a personal photography
+                collection dedicated to exploring
+                landscapes, nature and travel
+                through a personal visual perspective.
+            </p>
 
         </div>
 
@@ -365,21 +450,20 @@
 
 </section>
 
-<!-- ===================================================
-     FOOTER
-=================================================== -->
 
+<!-- FOOTER -->
 
+<footer>
 
+    <p>© 2026 Ivan Setiawan · nar4frame</p>
 
+    <a href="https://www.instagram.com/nar4frame/"
+       target="_blank"
+       rel="noopener">
+       Instagram @nar4frame
+    </a>
 
-    </main>
-
-    <div id="footer"></div>
-
-    <script src="js/components.js"></script>
-    <script src="js/script.js"></script>
+</footer>
 
 </body>
-
 </html>
