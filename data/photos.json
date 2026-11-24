@@ -1,5 +1,21 @@
 {
-  "landscape": [],
+  "landscape": [
+    {
+      "title": "Landscape Study 01",
+      "image": "images/landscape.webp",
+      "location": ""
+    },
+    {
+      "title": "Landscape Study 02",
+      "image": "images/hero.webp",
+      "location": ""
+    },
+    {
+      "title": "Landscape Study 03",
+      "image": "images/featured.webp",
+      "location": ""
+    }
+  ],
   "nature": [],
   "travel": []
 }
