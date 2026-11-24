@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nature Photography | nar4frame</title>
+<meta name="description" content="Nature, wildlife, floral and macro photography by Ivan Setiawan.">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f6f2;
+  color: #222;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  height: 78px;
+  padding: 0 5.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e3de;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  opacity: 0.55;
+}
+
+.page-intro {
+  padding: 85px 5.5% 45px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #888;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.intro-text {
+  font-size: 15px;
+  color: #777;
+  line-height: 1.8;
+}
+
+.gallery {
+  padding: 20px 5.5% 110px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px 24px;
+}
+
+.photo-card {
+  cursor: pointer;
+}
+
+.photo-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.photo-card:hover img {
+  opacity: 0.82;
+}
+
+.photo-title {
+  font-size: 17px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+footer {
+  border-top: 1px solid #e5e3de;
+  padding: 35px 5.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #777;
+  font-size: 13px;
+}
+
+.instagram {
+  color: #222;
+  font-size: 16px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  z-index: 10;
+  padding: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+}
+
+.modal-content h2 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.modal-content p {
+  color: #bbb;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: white;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav {
+    gap: 15px;
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 550px) {
+  header {
+    height: auto;
+    padding: 22px 5%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .page-intro {
+    padding: 55px 5% 30px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    padding: 15px 5% 70px;
+    gap: 32px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">nar4frame</a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="landscape.html">Landscape</a>
+    <a href="nature.html">Nature</a>
+    <a href="travel.html">Travel</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<section class="page-intro">
+  <p class="eyebrow">SELECTED COLLECTION</p>
+  <h1>Nature Photography</h1>
+  <p class="intro-text">
+    Wildlife, flowers and macro photography.
+  </p>
+</section>
+
+<section class="gallery">
+
+  <article class="photo-card"
+    onclick="openPhoto('Nature Study 01', 'images/nature.webp', '')">
+    <img src="images/nature.webp" alt="Nature photography">
+    <h2 class="photo-title">Nature Study 01</h2>
+  </article>
+
+  <article class="photo-card"
+    onclick="openPhoto('Nature Study 02', 'images/featured.webp', '')">
+    <img src="images/featured.webp" alt="Floral photography">
+    <h2 class="photo-title">Nature Study 02</h2>
+  </article>
+
+  <article class="photo-card"
+    onclick="openPhoto('Nature Study 03', 'images/signature.webp', '')">
+    <img src="images/signature.webp" alt="Nature photography">
+    <h2 class="photo-title">Nature Study 03</h2>
+  </article>
+
+</section>
+
+<footer>
+  <p>© 2026 Ivan Setiawan · nar4frame</p>
+  <a class="instagram"
+     href="https://www.instagram.com/nar4frame/"
+     target="_blank">
+    Instagram @nar4frame
+  </a>
+</footer>
+
+<div class="modal" id="photoModal" onclick="closePhoto()">
+  <span class="close">&times;</span>
+
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <img id="modalImage" src="" alt="">
+    <h2 id="modalTitle"></h2>
+    <p id="modalLocation"></p>
+  </div>
+</div>
+
+<script>
+function openPhoto(title, image, location) {
+  document.getElementById("modalImage").src = image;
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalLocation").textContent = location;
+  document.getElementById("photoModal").classList.add("active");
+}
+
+function closePhoto() {
+  document.getElementById("photoModal").classList.remove("active");
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closePhoto();
+  }
+});
+</script>
+
+</body>
+</html>
