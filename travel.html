@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Travel Photography | nar4frame</title>
-<meta name="description" content="Travel photography by Ivan Setiawan, capturing places, architecture and everyday moments.">
+<meta name="description" content="Travel photography, places, architecture and cultural stories by Ivan Setiawan.">
 
 <style>
 * {
@@ -230,37 +230,21 @@ footer {
   <p class="eyebrow">SELECTED COLLECTION</p>
   <h1>Travel Photography</h1>
   <p class="intro-text">
-    Places, architecture and travel stories.
+    Places, architecture, culture and stories from around the world.
   </p>
 </section>
 
-<section class="gallery">
-
-  <article class="photo-card"
-    onclick="openPhoto('Travel Study 01', 'images/signature.webp', '')">
-    <img src="images/signature.webp" alt="Travel photography">
-    <h2 class="photo-title">Travel Study 01</h2>
-  </article>
-
-  <article class="photo-card"
-    onclick="openPhoto('Travel Study 02', 'images/hero.webp', '')">
-    <img src="images/hero.webp" alt="Travel photography">
-    <h2 class="photo-title">Travel Study 02</h2>
-  </article>
-
-  <article class="photo-card"
-    onclick="openPhoto('Travel Study 03', 'images/landscape.webp', '')">
-    <img src="images/landscape.webp" alt="Travel photography">
-    <h2 class="photo-title">Travel Study 03</h2>
-  </article>
-
+<section class="gallery" id="photoGallery">
+  <!-- Photos loaded automatically from data/photos.json -->
 </section>
 
 <footer>
   <p>© 2026 Ivan Setiawan · nar4frame</p>
+
   <a class="instagram"
      href="https://www.instagram.com/nar4frame/"
-     target="_blank">
+     target="_blank"
+     rel="noopener noreferrer">
     Instagram @nar4frame
   </a>
 </footer>
@@ -276,10 +260,56 @@ footer {
 </div>
 
 <script>
+async function loadTravelPhotos() {
+  const gallery = document.getElementById("photoGallery");
+
+  try {
+    const response = await fetch("data/photos.json");
+
+    if (!response.ok) {
+      throw new Error("Unable to load photos.json");
+    }
+
+    const data = await response.json();
+    const photos = data.travel || [];
+
+    photos.forEach(photo => {
+      const card = document.createElement("article");
+      card.className = "photo-card";
+
+      card.onclick = () => {
+        openPhoto(
+          photo.title,
+          photo.image,
+          photo.location || ""
+        );
+      };
+
+      const img = document.createElement("img");
+      img.src = photo.image;
+      img.alt = photo.title;
+      img.loading = "lazy";
+
+      const title = document.createElement("h2");
+      title.className = "photo-title";
+      title.textContent = photo.title;
+
+      card.appendChild(img);
+      card.appendChild(title);
+
+      gallery.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error("Unable to load Travel photos:", error);
+  }
+}
+
 function openPhoto(title, image, location) {
   document.getElementById("modalImage").src = image;
   document.getElementById("modalTitle").textContent = title;
   document.getElementById("modalLocation").textContent = location;
+
   document.getElementById("photoModal").classList.add("active");
 }
 
@@ -292,6 +322,8 @@ document.addEventListener("keydown", function(event) {
     closePhoto();
   }
 });
+
+loadTravelPhotos();
 </script>
 
 </body>
