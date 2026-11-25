@@ -22,5 +22,11 @@
     }
   ],
   "nature": [],
-  "travel": []
+  "travel": [
+    {
+      "title": "test upload",
+      "image": "images/1795592611710-test-upload.webp",
+      "location": "Indonesia"
+    }
+  ]
 }
