@@ -6,6 +6,7 @@ async function githubRequest(path, token, options = {}) {
     headers: {
       Authorization: `Bearer ${token}`,
       Accept: "application/vnd.github+json",
+      "User-Agent": "nar4frame-photo-admin",
       "X-GitHub-Api-Version": "2022-11-28",
       "Content-Type": "application/json",
       ...options.headers
