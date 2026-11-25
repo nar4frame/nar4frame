@@ -1,32 +1,5 @@
 {
-  "landscape": [
-    {
-      "title": "Landscape Study 01",
-      "image": "images/landscape.webp",
-      "location": ""
-    },
-    {
-      "title": "Landscape Study 02",
-      "image": "images/hero.webp",
-      "location": ""
-    },
-    {
-      "title": "Landscape Study 03",
-      "image": "images/featured.webp",
-      "location": ""
-    },
-    {
-      "title": "test upload",
-      "image": "images/1795591924241-test-upload.webp",
-      "location": "Indonesia"
-    }
-  ],
+  "landscape": [],
   "nature": [],
-  "travel": [
-    {
-      "title": "test upload",
-      "image": "images/1795592611710-test-upload.webp",
-      "location": "Indonesia"
-    }
-  ]
+  "travel": []
 }
