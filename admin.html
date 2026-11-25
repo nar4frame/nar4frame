@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Admin | nar4frame</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 50px 20px;
+  background: #f7f6f2;
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 650px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #777;
+  margin-bottom: 40px;
+}
+
+label {
+  display: block;
+  margin: 22px 0 8px;
+  font-size: 14px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+input[type="file"] {
+  padding: 12px;
+}
+
+button {
+  margin-top: 28px;
+  padding: 14px 28px;
+  border: 0;
+  background: #222;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: wait;
+}
+
+#status {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.preview {
+  display: none;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.preview img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  background: #eee;
+}
+
+.note {
+  margin-top: 35px;
+  color: #888;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>nar4frame Admin</h1>
+  <p class="subtitle">Manage your photography collection.</p>
+
+  <form id="uploadForm">
+
+    <label>Admin Key</label>
+    <input
+      type="password"
+      id="adminKey"
+      required
+      autocomplete="off"
+      placeholder="Enter admin key"
+    >
+
+    <label>Collection</label>
+    <select id="category" required>
+      <option value="landscape">Landscape</option>
+      <option value="nature">Nature</option>
+      <option value="travel">Travel</option>
+    </select>
+
+    <label>Photo Title</label>
+    <input
+      type="text"
+      id="title"
+      required
+      placeholder="Enter photo title"
+    >
+
+    <label>Location</label>
+    <input
+      type="text"
+      id="location"
+      placeholder="e.g. Mount Fuji, Japan"
+    >
+
+    <label>Select Photo</label>
+    <input
+      type="file"
+      id="photo"
+      accept="image/jpeg,image/png,image/webp"
+      required
+    >
+
+    <div class="preview" id="preview">
+      <img id="previewImage" alt="Photo preview">
+    </div>
+
+    <button type="submit" id="submitButton">
+      Upload Photo
+    </button>
+
+  </form>
+
+  <div id="status"></div>
+
+  <p class="note">
+    nar4frame · Photography Without Limits
+  </p>
+
+</div>
+
+<script>
+const form = document.getElementById("uploadForm");
+const photoInput = document.getElementById("photo");
+const statusBox = document.getElementById("status");
+const submitButton = document.getElementById("submitButton");
+
+photoInput.addEventListener("change", () => {
+  const file = photoInput.files[0];
+
+  if (!file) return;
+
+  const previewURL = URL.createObjectURL(file);
+
+  document.getElementById("previewImage").src = previewURL;
+  document.getElementById("preview").style.display = "block";
+});
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const file = photoInput.files[0];
+
+  if (!file) return;
+
+  if (file.size > 8 * 1024 * 1024) {
+    statusBox.textContent = "Please use an image smaller than 8 MB.";
+    return;
+  }
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Uploading...";
+  statusBox.textContent = "Please wait...";
+
+  try {
+    const base64 = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        resolve(reader.result.split(",")[1]);
+      };
+
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+
+    const extension = file.name.split(".").pop().toLowerCase();
+    const safeTitle = document.getElementById("title").value
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+
+    const imageName = `${Date.now()}-${safeTitle}.${extension}`;
+
+    const response = await fetch("/api/photos", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Admin-Key": document.getElementById("adminKey").value
+      },
+      body: JSON.stringify({
+        category: document.getElementById("category").value,
+        title: document.getElementById("title").value.trim(),
+        location: document.getElementById("location").value.trim(),
+        imageName,
+        imageBase64: base64
+      })
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || "Upload failed.");
+    }
+
+    statusBox.textContent = "Photo uploaded successfully!";
+    form.reset();
+    document.getElementById("preview").style.display = "none";
+
+  } catch (error) {
+    statusBox.textContent = "Error: " + error.message;
+  }
+
+  submitButton.disabled = false;
+  submitButton.textContent = "Upload Photo";
+});
+</script>
+
+</body>
+</html>
