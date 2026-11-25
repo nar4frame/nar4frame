@@ -1,389 +1,279 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>About | nar4frame</title>
+    <meta name="description" content="Meet Ivan Setiawan, the photographer behind nar4frame. Discover his approach to landscape, nature and travel photography.">
+    <meta name="author" content="Ivan Setiawan">
+    <meta name="theme-color" content="#f7f6f2">
 
-    <meta name="description"
-      content="Learn about Ivan Setiawan, the photographer behind nar4frame, and the vision of creating timeless fine art landscape and nature photography.">
-
-    <meta name="author"
-      content="Ivan Setiawan">
-
-    <meta name="robots"
-      content="index, follow">
-
-    <meta name="theme-color"
-      content="#111111">
-
-    <link rel="canonical"
-      href="https://nar4frame.com/about.html">
-
-    <!-- Favicon -->
+    <link rel="canonical" href="https://nar4frame.com/about.html">
     <link rel="icon" href="favicon.ico" sizes="any">
 
-    <link rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="favicon-32x32.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="favicon-16x16.png">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f6f2;
+            color: #222;
+            line-height: 1.7;
+        }
 
-    <link rel="apple-touch-icon"
-      sizes="180x180"
-      href="apple-touch-icon.png">
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    <link rel="manifest"
-      href="site.webmanifest">
+        header {
+            height: 76px;
+            padding: 0 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e8e6e0;
+        }
 
-    <!-- Open Graph -->
-    <meta property="og:type"
-      content="website">
+        .logo {
+            font-size: 23px;
+            font-weight: 700;
+        }
 
-    <meta property="og:title"
-      content="About | nar4frame">
+        nav {
+            display: flex;
+            gap: 30px;
+            font-size: 14px;
+        }
 
-    <meta property="og:description"
-      content="Learn about Ivan Setiawan and the vision behind nar4frame Fine Art Photography.">
+        nav a:hover {
+            opacity: .6;
+        }
 
-    <meta property="og:url"
-      content="https://nar4frame.com/about.html">
+        .container {
+            width: 88%;
+            max-width: 1400px;
+            margin: auto;
+        }
 
-    <meta property="og:site_name"
-      content="nar4frame">
+        .page-heading {
+            padding: 100px 0 65px;
+        }
 
-    <meta property="og:image"
-      content="https://nar4frame.com/images/og-image.jpg">
+        .eyebrow {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #888;
+            text-transform: uppercase;
+        }
 
-    <meta property="og:image:width"
-      content="1200">
+        h1 {
+            font-size: clamp(38px, 5vw, 58px);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-top: 15px;
+        }
 
-    <meta property="og:image:height"
-      content="630">
+        .subtitle {
+            color: #777;
+            margin-top: 12px;
+            font-size: 17px;
+        }
 
-    <meta property="og:image:type"
-      content="image/jpeg">
+        .artist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+            padding-bottom: 110px;
+        }
 
-    <meta property="og:locale"
-      content="en_US">
+        .artist img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+        }
 
-    <!-- Twitter -->
-    <meta name="twitter:card"
-      content="summary_large_image">
+        .artist-content h2,
+        .philosophy h2 {
+            font-size: 34px;
+            font-weight: 400;
+            line-height: 1.3;
+            margin: 18px 0 22px;
+        }
 
-    <meta name="twitter:title"
-      content="About | nar4frame">
+        .artist-content p,
+        .philosophy p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 18px;
+            max-width: 620px;
+        }
 
-    <meta name="twitter:description"
-      content="Learn about Ivan Setiawan and the vision behind nar4frame Fine Art Photography.">
+        .philosophy {
+            border-top: 1px solid #e5e3dd;
+            padding: 80px 0 110px;
+        }
 
-    <meta name="twitter:image"
-      content="https://nar4frame.com/images/og-image.jpg">
+        .philosophy-content {
+            max-width: 850px;
+        }
 
-      <meta name="twitter:image:alt"
-      content="Portrait of Ivan Setiawan, Fine Art Photographer">
+        footer {
+            border-top: 1px solid #e5e3dd;
+            padding: 35px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #777;
+            font-size: 13px;
+        }
 
-    <meta name="twitter:image:alt"
-      content="Fine Art Photography by nar4frame">
+        footer a {
+            color: #222;
+            font-size: 15px;
+        }
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+        @media (max-width: 700px) {
+            header {
+                height: auto;
+                padding: 22px 6%;
+                align-items: flex-start;
+                gap: 20px;
+                flex-direction: column;
+            }
 
-    <link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+            nav {
+                width: 100%;
+                gap: 18px;
+                flex-wrap: wrap;
+                font-size: 13px;
+            }
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet">
+            .page-heading {
+                padding: 65px 0 45px;
+            }
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
-      rel="stylesheet">
+            .artist {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding-bottom: 75px;
+            }
 
-    <!-- CSS -->
-    <link rel="stylesheet"
-      href="css/style.css">
-      
+            .artist-content h2,
+            .philosophy h2 {
+                font-size: 29px;
+            }
 
+            .philosophy {
+                padding: 65px 0 75px;
+            }
+
+            footer {
+                gap: 15px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div id="header"></div>
+<header>
+    <a href="index.html" class="logo">nar4frame</a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="landscape.html">Landscape</a>
+        <a href="nature.html">Nature</a>
+        <a href="travel.html">Travel</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
 
 <main>
 
+    <section class="page-heading container">
+        <span class="eyebrow">About the Photographer</span>
+        <h1>Ivan Setiawan</h1>
+        <p class="subtitle">Fine Art Landscape &amp; Nature Photographer</p>
+    </section>
 
-<!-- ===================================================
-     ABOUT HERO
-=================================================== -->
+    <section class="artist container">
 
-<section id="about-hero">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span>About</span>
-
-            <h1>Ivan</h1>
-
-            <p>
-
-                Fine Art Photographer
-
-            </p>
-
+        <div>
+            <img
+                src="images/ivan-setiawan.webp"
+                alt="Ivan Setiawan, photographer behind nar4frame"
+                loading="lazy">
         </div>
 
-    </div>
+        <div class="artist-content">
+            <span class="eyebrow">Artist Statement</span>
 
-</section>
+            <h2>Photography is a way of seeing.</h2>
 
-<!-- ===================================================
-     ARTIST
-=================================================== -->
+            <p>
+                I am Ivan, the photographer behind nar4frame.
+                Through photography, I explore landscapes, nature,
+                and places that inspire me to pause and observe.
+            </p>
 
-<section id="about-artist">
+            <p>
+                My approach is guided by light, composition,
+                atmosphere, and a personal perspective.
+                I aim to create photographs that go beyond
+                documenting a scene and invite viewers to
+                experience something more.
+            </p>
+        </div>
 
-    <div class="container">
+    </section>
 
-        <div class="artist-wrapper">
+    <section class="philosophy">
+        <div class="container">
 
-            <div class="artist-photo">
+            <span class="eyebrow">Our Perspective</span>
+            <h2>Photography Without Limits</h2>
 
-                <img
-                    src="images/about/ivan-setiawan.webp"
-                    alt="Ivan Setiawan"
-                    width="900"
-                    height="1200">
-
-            </div>
-            
-            <div class="artist-content">
-
-                <span class="section-label">
-
-                    Artist Statement
-
-                </span>
-
-                <h2>
-
-                    Welcome to nar4frame
-
-                </h2>
-
+            <div class="philosophy-content">
                 <p>
-
-                    I am Ivan, a fine art photographer with a passion for
-                    capturing landscapes, nature, and quiet moments that often go
-                    unnoticed. Through every photograph, I seek to transform ordinary
-                    scenes into timeless visual stories that evoke emotion and invite
-                    reflection.
-
+                    Every frame offers a different way to see the world.
+                    For nar4frame, photography is not limited by places,
+                    subjects, or perspectives.
                 </p>
 
                 <p>
-
-                    Every image is created with patience, thoughtful composition, and
-                    careful attention to light. Rather than simply documenting a
-                    place, my goal is to express atmosphere, mood, and the beauty
-                    hidden within everyday moments.
-
+                    From open landscapes to the smallest details in nature
+                    and meaningful travel experiences, each photograph
+                    is an exploration of light, mood, and visual expression.
                 </p>
 
+                <p>
+                    Beyond Every Frame.
+                </p>
             </div>
 
         </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     PHOTOGRAPHY PHILOSOPHY
-=================================================== -->
-
-<section id="about-philosophy">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span>Philosophy</span>
-
-            <h2>Photography Philosophy</h2>
-
-        </div>
-
-        <div class="philosophy-content">
-
-            <p>
-
-                Photography, to me, is more than recording a scene, it is a way of
-                expressing emotion, atmosphere, and silence. Every photograph should
-                invite the viewer to pause, reflect, and experience the moment beyond
-                what is immediately visible.
-
-            </p>
-
-            <p>
-
-                Through nar4frame, I focus on creating timeless fine art images where
-                light, composition, and mood work together to communicate a quiet and
-                meaningful visual story.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     SPECIALIZATIONS
-=================================================== -->
-
-<section id="about-specializations">
-
-    <div class="container">
-
-        <div class="about-card">
-
-            <div class="section-heading">
-
-                <span>Specializations</span>
-
-                <h2>Creative Focus</h2>
-
-            </div>
-
-            <ul class="specialization-list">
-
-                <li>
-                    <strong>Landscape</strong><br>
-                    Fine Art Landscape
-                </li>
-
-                <li>
-                    <strong>Nature</strong><br>
-                    Floral • Macro • Botanical
-                </li>
-
-                <li>
-                    <strong>nar4frame Signature</strong><br>
-                    Muted Vintage
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     EQUIPMENT
-=================================================== -->
-
-<section id="about-equipment">
-
-    <div class="container">
-
-        <div class="about-card">
-
-            <div class="section-heading">
-
-                <span>Equipment</span>
-
-                <h2>Camera &amp; Lenses</h2>
-
-            </div>
-
-            <div class="equipment-grid">
-
-                <div class="equipment-item">
-                    <h3>Primary Camera</h3>
-                    <p>FUJIFILM X-T5</p>
-                </div>
-
-                <div class="equipment-item">
-                    <h3>Primary Lens</h3>
-                    <p>FUJINON XF16-80mmF4 R OIS WR</p>
-                </div>
-
-                <div class="equipment-item">
-                    <h3>Secondary Camera</h3>
-                    <p>Nikon D7500</p>
-                </div>
-
-                <div class="equipment-item">
-                    <h3>Macro Lens</h3>
-                    <p>AF-S Micro-NIKKOR 105mm f/2.8G IF-ED VR</p>
-                </div>
-
-                <div class="equipment-item">
-                    <h3>General Purpose</h3>
-                    <p>AF-S DX NIKKOR 18-140mm f/3.5-5.6G ED VR</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     CONTACT
-=================================================== -->
-
-<section id="about-contact">
-
-    <div class="container">
-
-        <div class="about-card">
-
-            <div class="section-heading">
-
-                <span>Contact</span>
-
-                <h2>Get in Touch</h2>
-
-            </div>
-
-            <p class="contact-email">
-
-                ✉️
-                nar4frame@gmail.com
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
 </main>
 
-<div id="footer"></div>
-
-<script src="js/components.js"></script>
-<script src="js/script.js"></script>
+<footer>
+    <span>© 2026 Ivan Setiawan · nar4frame</span>
+    <a href="https://www.instagram.com/nar4frame/" target="_blank" rel="noopener">
+        Instagram @nar4frame
+    </a>
+</footer>
 
 </body>
 </html>
-
+```
