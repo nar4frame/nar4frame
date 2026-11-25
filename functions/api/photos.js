@@ -72,7 +72,11 @@ export async function onRequestPost({ request, env }) {
     );
 
     if (!uploadImage.ok) {
-      throw new Error("Image upload failed");
+      const errorDetails = await uploadImage.text();
+
+      throw new Error(
+        `GitHub upload failed (${uploadImage.status}): ${errorDetails.slice(0, 500)}`
+      );
     }
 
     // Read existing photo data
